@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1252765728829149397}
   - component: {fileID: 1252765728829149398}
   - component: {fileID: 1252765728829149399}
-  m_Layer: 0
+  - component: {fileID: 8576120073378333917}
+  m_Layer: 7
   m_Name: EnemyProjectile_Trace
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252765728829149392}
-  m_LocalRotation: {x: -0.010163309, y: -0, z: -0, w: 0.9999484}
-  m_LocalPosition: {x: 6.914205, y: 2.312256, z: -0.00097562734}
+  m_LocalRotation: {x: 0.14222802, y: -0, z: -0, w: 0.98983395}
+  m_LocalPosition: {x: 1.7679807, y: -0.6380433, z: 0.013515083}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1252765728829149397
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -98,3 +99,21 @@ MonoBehaviour:
   lifeTime: 8
   moveDirection: {x: -1, y: 0}
   attackCD: 1
+  damage: 2
+  hitVFX: {fileID: 4801493125213720806, guid: 94d3dff6247d98e4cb4d8d6f0be5e291, type: 3}
+--- !u!58 &8576120073378333917
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252765728829149392}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.49999997

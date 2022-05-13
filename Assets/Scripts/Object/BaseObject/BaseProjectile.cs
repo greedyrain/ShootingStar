@@ -10,6 +10,10 @@ public class BaseProjectile : MonoBehaviour
     [SerializeField] private float lifeTime;
     [SerializeField] protected Vector2 moveDirection;
     [SerializeField] public float attackCD;
+
+    [SerializeField] private float damage;
+    [SerializeField] private GameObject hitVFX;
+    
     private TrailRenderer trail;
     
     protected Transform target;
@@ -41,6 +45,25 @@ public class BaseProjectile : MonoBehaviour
         if (trail != null)
         {
             trail.Clear();
+        }
+    }
+
+    /// <summary>
+    /// 产生碰撞后在碰撞点生成碰撞特效
+    /// </summary>
+    /// <param name="col"></param>
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.TryGetComponent<Character>(out Character character))
+        {
+            character.TakeDamage(damage);
+            ObjectPoolSystem.Instance.GetObj(hitVFX.name, (vfxObj) =>
+            {
+                var contantPoint = col.GetContact(0);
+                vfxObj.transform.position = contantPoint.point;
+                vfxObj.transform.rotation = Quaternion.identity;
+                gameObject.SetActive(false);
+            });
         }
     }
 }

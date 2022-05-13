@@ -6,8 +6,9 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Character
 {
+    [Header("--------------Move------------")]
     [SerializeField] private float paddingX;
     [SerializeField] private float paddingY;
     [SerializeField] private float moveSpeed;

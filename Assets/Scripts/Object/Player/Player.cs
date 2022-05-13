@@ -182,7 +182,7 @@ public class Player : Character
         inputAccelerateTime = 0f;
         while (inputAccelerateTime < time)
         {
-            inputAccelerateTime += Time.fixedDeltaTime / time;
+            inputAccelerateTime += Time.fixedDeltaTime ;
             rb.velocity = Vector2.Lerp(rb.velocity, moveVelocity, inputAccelerateTime / time);
             transform.rotation = Quaternion.Lerp(transform.rotation, moveRotation, inputAccelerateTime / time);
 

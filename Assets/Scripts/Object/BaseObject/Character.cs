@@ -9,10 +9,10 @@ using UnityEngine;
 /// </summary>
 public class Character : MonoBehaviour
 {
-    private float maxHp;
-    private float hp;
+    [SerializeField] private float maxHp;
+    [SerializeField] private float hp;
 
-    private GameObject deathVFX;
+    [SerializeField] private GameObject deathVFX;
 
     protected virtual void OnEnable()
     {
@@ -31,6 +31,7 @@ public class Character : MonoBehaviour
     public virtual void Die()
     {
         hp = 0;
+        gameObject.SetActive(false);
         ObjectPoolSystem.Instance.GetObj(deathVFX.name, (obj) =>
         {
             obj.transform.position = transform.position;

@@ -9,8 +9,6 @@ public class EnemyProjectile_Trace : BaseProjectile
     protected override void Awake()
     {
          target = GameObject.FindGameObjectWithTag("Player").transform;
-         Debug.Log(target.name);
-         Debug.Log(target.position);
     }
     
     protected async override void OnEnable()
